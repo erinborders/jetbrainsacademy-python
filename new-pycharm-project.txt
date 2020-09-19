@@ -1,0 +1,7 @@
+The first option is the path to a new virtual environment. You can think of a virtual environment as of an isolated “pseudo” Python distribution with its own features: available libraries, version of Python and pip, the Python built-in package manager, which allows you installing external libraries. Base interpreter is the path to real Python, which you download and install to your computer.
+
+Let’s say you have downloaded Python 2.7 and installed it into C:/python2.7, and Python 3.7 – C:/python3.7.
+
+Now if you want to create a new project on Python 2.7, you will choose C:/python2.7/python.exe as the base interpreter for this project. In case you want to start a new project on Python 3.7, you will choose C:/python3.7/python.exe as the base interpreter for a project, written on Python 3.7.
+
+Each of these projects will have its own dependencies – the libraries available and needed for a specific project
