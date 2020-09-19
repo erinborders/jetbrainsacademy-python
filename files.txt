@@ -1,0 +1,9 @@
+Besides the contents, each file has metadata. Metadata is an additional information about the file stored in computer memory (you know how important it is for a computer to manage files properly). Let's take a look at some examples of metadata that file can have.
+
+Name: a unique identifier of the file. In our case, it's img_1.jpg.
+
+Extension: a filename suffix starting with a dot and indicating the format. For example, .txt extension is used for plain text files, .img or .jpg are used for images and so on.
+
+Format, or type. The file format is indicated by an extension: it tells us what kind of information is stored there. It can be a text message, an image, a video, an audiofile, a computer program – you name it. For example, here .jpg extension indicates that this file is of the JPEG image format. All files on all modern types of OS are organized as 1-D arrays of bytes. The format specifies the rules of how the computer must read and interpret these bytes. For instance, in plain text format, characters are encoded as sequences of bytes, while the bytes of audiofiles, videofiles, and images are interpreted differently.
+
+Size: how much space the file occupies on a device (usually measured in bytes).
