@@ -7,3 +7,11 @@ Extension: a filename suffix starting with a dot and indicating the format. For 
 Format, or type. The file format is indicated by an extension: it tells us what kind of information is stored there. It can be a text message, an image, a video, an audiofile, a computer program – you name it. For example, here .jpg extension indicates that this file is of the JPEG image format. All files on all modern types of OS are organized as 1-D arrays of bytes. The format specifies the rules of how the computer must read and interpret these bytes. For instance, in plain text format, characters are encoded as sequences of bytes, while the bytes of audiofiles, videofiles, and images are interpreted differently.
 
 Size: how much space the file occupies on a device (usually measured in bytes).
+
+Let's discuss a special kind of metadata called file attributes. Each file has some set of attributes, though this set varies greatly from one OS to another. Each attribute can be either set (toggled on) or cleared (toggled off). For example, let’s look at the following three attributes: these basic attributes are included in every version of Windows:
+
+Hidden (H): when set, makes the file hidden, which means that the user cannot see it by default.
+
+System (S): when set, indicates that the file is crucial to the system and the computer to operate properly.
+
+Read-only (R): when set, makes the file read-only, which means users cannot write into it.
