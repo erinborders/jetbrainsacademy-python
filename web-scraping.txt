@@ -1,0 +1,20 @@
+Using library Scrapy
+
+WEBSCRAPING PIPELINE
+
+1. setup - define objective and find sources to help us do it
+2. acquisition - accessing, parsing, and extracting data into data structures
+3. processing - running data through processes to achieve desired goal
+
+WRITING MULTILINE VARIABLES IN PYTHON
+
+html = '''
+<html>
+  <head>
+    <title>Intro HTML</title>
+  </head>
+  <body>
+    <p>Hello World!</p>
+  </body>
+</html>
+'''
