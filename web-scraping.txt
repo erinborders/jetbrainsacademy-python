@@ -18,3 +18,20 @@ html = '''
   </body>
 </html>
 '''
+
+X PATH NOTATION
+
+xpath = '/html/body/div[2]'
+
+// means looking through all future generations
+xpath = '/html/body/div[2]//table 
+means navigate to all table elements that are a descendant of that
+div[2] elements
+
+xpath = '//p'
+mean navigate to all p elements
+
+xpath = '//div[@id="uid"]'
+means navigate to all div elements with the id 'uid'
+
+xpath is general, not python specific
