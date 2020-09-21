@@ -35,3 +35,34 @@ xpath = '//div[@id="uid"]'
 means navigate to all div elements with the id 'uid'
 
 xpath is general, not python specific
+
+BRAD TRAVERSY WEB SCRAPING TUTORIAL
+
+1. open vscode and create python virtual env (python3 -m venv <folder name>)
+2. once you run that in terminal there will be a <folder name> in vscode, and inside
+that will be a bin folder that contains the activate script - so you want
+to run that (source <folder>/bin/activate)
+3. ctrl + shift + p then search for python, select interpreter then select
+your virtual env
+4. install scrapy with pip 
+5. run scrapy startproject <project name> and cd into project 
+(the middleware folder is for prepping data from response, like cleaning it, validating it, etc)
+6. inside spider folder create a file (this will be your main file)
+7. import scrapy 
+8. create spider class that extends scrapy.spider 
+9. use kite extension to see what scrapy.spider object expects
+
+class mySpider(scrapy.Spider):
+    name = 'posts'
+
+    start_urls = [
+        'example url/1/',
+        'example url/2/'
+    ]
+
+    // use parse - it's in charge of the res when returning the scraped data
+    def parse(self, response):
+        page = response.url.split('/)[-1] // will give us the slash piece one from the end (the page number in this case)
+
+
+
