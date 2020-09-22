@@ -63,6 +63,40 @@ class mySpider(scrapy.Spider):
     // use parse - it's in charge of the res when returning the scraped data
     def parse(self, response):
         page = response.url.split('/)[-1] // will give us the slash piece one from the end (the page number in this case)
+        filename = 'posts-%s.html' % page // the %s is a wildcard and the % page tells the computer what we're substituting in
+        with open(filename, 'wb') as f: // wb is write binary permissions
+            f.write(response.body)
+
+Then you can run the above with 'scrapy crawl <name of spider, which would be posts>' in terminal 
 
 
+Go into scrapy shell using 'scrapy shell <url that we want to crawl>' in terminal 
+ --> then you can manipulate the response 
+    EXAMPLE: response.css('h3::text').get() 
+
+TO USE XPATH SELECTORS
+response.xpath('//h3')
+response.xpath('//h3/text()').extract() // gets you all the text in the h3's 
+
+ON CHROME there's an option to copy the xpath if you right click on an 
+element inside the developer tools elements tab 
+
+TO GO THROUGH PAGES WITH SPIDER 
+
+    def parse(self, response):
+        for post in response.css('div.post-item'):
+            yield {
+                'title': post.css('.post-header h2 a::text')[0].get()
+                'author': post.css('.post-header a::text')[1].get()
+            }
+
+        // find pagination
+        next_page = response.css('a.next-posts-link::attr(href)').get()
+        if next_page is not None: // if next page exists
+            next_page = response.urljoin(next_page) // join in next page so that it scrapes that as well 
+            yield scrapy.Request(next_page, callback=self.parse)
+
+TO PUT INTO A JSON FILE USE -O OUTPUT FLAG
+(scrapy crawl posts -o posts.json) // choose json list to keep new entries from overwriting entire file 
+// doesn't overwrite just because you're scraping a bunch of pages 
 
