@@ -55,7 +55,7 @@ your virtual env
 class mySpider(scrapy.Spider):
     name = 'posts'
 
-    start_urls = [
+    start_urls = [ // this is the shorthand for start requests function
         'example url/1/',
         'example url/2/'
     ]
