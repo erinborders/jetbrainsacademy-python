@@ -39,12 +39,15 @@ xpath is general, not python specific
 BRAD TRAVERSY WEB SCRAPING TUTORIAL
 
 1. open vscode and create python virtual env (python3 -m venv <folder name>)
+(FOR ME = use miniconda shell with command: conda create --name myenv)
 2. once you run that in terminal there will be a <folder name> in vscode, and inside
 that will be a bin folder that contains the activate script - so you want
 to run that (source <folder>/bin/activate)
+(FOR ME = source Scripts/activate)
 3. ctrl + shift + p then search for python, select interpreter then select
 your virtual env
 4. install scrapy with pip 
+(FOR ME = conda install -c conda-forge scrapy)
 5. run scrapy startproject <project name> and cd into project 
 (the middleware folder is for prepping data from response, like cleaning it, validating it, etc)
 6. inside spider folder create a file (this will be your main file)
@@ -114,3 +117,5 @@ response.xpath("//img/@src")
 
 RUN THE SPIDER BY NAVIGATING TO MAIN DIRECTORY IN CONSOLE THEN 
 ISSUING COMMAND 'SCRAPY CRAWL <SPIDER NAME>'
+
+
