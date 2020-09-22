@@ -52,7 +52,7 @@ your virtual env
 8. create spider class that extends scrapy.spider 
 9. use kite extension to see what scrapy.spider object expects
 
-class mySpider(scrapy.Spider):
+class MySpider(scrapy.Spider):
     name = 'posts'
 
     start_urls = [ // this is the shorthand for start requests function
@@ -100,3 +100,17 @@ TO PUT INTO A JSON FILE USE -O OUTPUT FLAG
 (scrapy crawl posts -o posts.json) // choose json list to keep new entries from overwriting entire file 
 // doesn't overwrite just because you're scraping a bunch of pages 
 
+PYTHON SCRAPY TUTORIAL - KITE CHANNEL
+
+// items are the data extracted from selectors 
+// scrapy item classes define how our scraped data should be structured 
+
+EXAMPLE:
+class Article(scrapy.Item):
+    headline = scrapy.Field()
+
+to get images
+response.xpath("//img/@src")
+
+RUN THE SPIDER BY NAVIGATING TO MAIN DIRECTORY IN CONSOLE THEN 
+ISSUING COMMAND 'SCRAPY CRAWL <SPIDER NAME>'
