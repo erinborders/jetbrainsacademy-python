@@ -30,3 +30,17 @@
 # -109 <= target <= 109
 # Only one valid answer exists.
 
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # loop through list
+        for item in array:
+            # would check if numbers were greater than target but target could be negative
+            # find the complement to the number we're on
+            pair = target - item 
+            # then loop through the rest of the array
+            for potential in len(array)-array.index(item):
+                # and end the loop if the match is found
+                if potential == pair:
+                    return [array.index(item), array.index(potential)]
+                # otherwise return none because no answers match
+                return None 
