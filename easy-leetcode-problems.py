@@ -40,13 +40,44 @@ class Solution:
             # find the complement to the number we're on
             pair = target - item 
             # check if dict already has pair
-            if pair in matches:
+            if item in matches.values():
                 # return the index of item and pair
-                return [array.index(item), array.index(pair)]
+                # but what if the item and match are the same number ?
+                firstIndex = array.index(item)
+                return [firstIndex, array.index(pair, firstIndex)]
             # otherwise add pair to dict
             matches.update({item: pair})
         # if you get to this point, there are no matches in the array so end it
         return None 
+
+## ACCEPTED ANSWER WITH TEST CASES
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # create dict for storing pairs
+        matches = {}
+        # loop through list
+        for item in nums:
+            # would check if numbers were greater than target but target could be negative
+            # find the complement to the number we're on
+            pair = target - item 
+            # check if dict already has pair
+            if item in matches.values():
+                # return the index of item and pair
+                firstIndex = nums.index(item)
+                if item == pair:
+                    # if they're the same number, find the next index
+                    secondIndex = nums.index(pair, firstIndex+1)
+                else:
+                    # otherwise, secondIndex is the pair 
+                    secondIndex = nums.index(pair)
+                return [firstIndex, secondIndex]
+            # otherwise add pair to dict
+            matches.update({item: pair})
+        # if you get to this point, there are no matches in the list so end it
+        return None 
+
+
             
             
 
