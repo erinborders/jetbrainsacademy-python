@@ -32,15 +32,22 @@
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # create dict for storing pairs
+        matches = {}
         # loop through list
         for item in array:
             # would check if numbers were greater than target but target could be negative
             # find the complement to the number we're on
             pair = target - item 
-            # then loop through the rest of the array
-            for potential in len(array)-array.index(item):
-                # and end the loop if the match is found
-                if potential == pair:
-                    return [array.index(item), array.index(potential)]
-                # otherwise return none because no answers match
-                return None 
+            # check if dict already has pair
+            if pair in matches:
+                # return the index of item and pair
+                return [array.index(item), array.index(pair)]
+            # otherwise add pair to dict
+            matches.update({item: pair})
+        # if you get to this point, there are no matches in the array so end it
+        return None 
+            
+            
+
+            
