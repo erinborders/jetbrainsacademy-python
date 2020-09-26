@@ -102,10 +102,22 @@ class Solution:
     def reverse(self, x: int) -> int:
         # convert integer into list
         list_x = list(x)
-        # check if list is odd or even length
-        # loop through first half of list
-        for i in range(len(list_x)/2):
-            # save values of item i'm on and mirrored item in variables
+        # check if list is even or odd
+        if len(list_x) % 2 == 0:
+            midway = len(list_x)/2
+        else:
+            midway = (len(list_x) -1)/2
+        # loop through first half of list 
+        for i in range(midway):
+            # save values of item i'm on in variables
+            og = list_x[i]
             # equate the list positions to the new values
+            list_x[i] = list_x[len(list_x-i)]
+            list_x[len(list_x-i)] = og
+        # return joined list as integer
+        ans = ''
+        return int(ans.join(list_x))
+
+    # problems with this, have to deal with negative sign and 32 bit limit
 
             
